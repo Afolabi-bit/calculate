@@ -1,0 +1,571 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*
+font-family: "Cabin Sketch", cursive;
+font-family: "Fredericka the Great", cursive;
+font-family: "Quantico", sans-serif;
+font-family: 'Butterfly Kids', cursive;
+font-family: 'Dancing Script', cursive;
+*/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: url(../assets/sky-at-sunset.jpg);
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  pointer-events: none;
+}
+
+/* spinner ************/
+
+.spinner {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: #1c221f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.display .spinner {
+  display: none;
+}
+
+.dots-wrapper {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+  animation-name: animateCircles;
+  animation-duration: 4s;
+}
+
+@keyframes animateCircles {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  25% {
+    opacity: 1;
+    visibility: visible;
+  }
+  90% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.dots-wrapper div::after {
+  content: "";
+  position: absolute;
+  background: #af7508;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  margin: -0.4rem 0 0 -0.4rem;
+}
+
+.dots-wrapper div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+
+.dots-wrapper div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+
+.dots-wrapper div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+
+.dots-wrapper div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+
+.dots-wrapper div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+
+.dots-wrapper div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+
+.dots-wrapper div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+
+.dots-wrapper div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+
+.dots-wrapper div:nth-child(1)::after {
+  top: 6.3rem;
+  left: 6.3rem;
+}
+
+.dots-wrapper div:nth-child(2)::after {
+  top: 6.8rem;
+  left: 5.6rem;
+}
+
+.dots-wrapper div:nth-child(3)::after {
+  top: 7.1rem;
+  left: 4.8rem;
+}
+
+.dots-wrapper div:nth-child(4)::after {
+  top: 7.2rem;
+  left: 4rem;
+}
+
+.dots-wrapper div:nth-child(5)::after {
+  top: 7.1rem;
+  left: 3.2rem;
+}
+
+.dots-wrapper div:nth-child(6)::after {
+  top: 6.8rem;
+  left: 2.4rem;
+}
+
+.dots-wrapper div:nth-child(7)::after {
+  top: 6.3rem;
+  left: 1.7rem;
+}
+.dots-wrapper div:nth-child(8)::after {
+  top: 5.6rem;
+  left: 1.2rem;
+}
+
+.dots-wrapper div {
+  animation: spins 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 4rem 4rem;
+}
+
+@keyframes spins {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner-text {
+  font-size: 3rem;
+  color: #777;
+  font-family: "Dancing Script", cursive;
+  margin: 2rem 0;
+  letter-spacing: 1.1px;
+}
+
+/* Xx*********** spinner ***8***/
+
+.container {
+  overflow-x: hidden;
+  margin: 0 auto;
+  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  display: none;
+  height: 100vh;
+  width: 720px;
+  transition: background 300ms;
+}
+
+.display .container {
+  display: block;
+}
+
+#content {
+  position: relative;
+  transition: all 300ms;
+}
+
+.dark .container {
+  background: #1c221f;
+}
+
+.calc-top {
+  position: relative;
+  height: 10vh;
+  width: 100%;
+}
+
+.burger {
+  position: absolute;
+  top: 3rem;
+  left: 5rem;
+  margin: 0 3rem 3rem 0;
+  width: 2.5rem;
+  height: 3.5rem;
+  cursor: pointer;
+  z-index: 50;
+  transition: left 600ms;
+}
+
+.line {
+  margin: 4px;
+  width: 100%;
+  height: 2px;
+  background-color: #888;
+  transition: all 0.3s;
+}
+
+.line2 {
+  width: 80%;
+}
+/* Make burger X closing btn
+.change .burger {
+  left: 23rem;
+  opacity: 1;
+  z-index: 300;
+}
+
+.change .line1 {
+  transform: rotate(42deg) translate(3px, 1px);
+}
+.change .line2 {
+  display: none;
+}
+.change .line3 {
+  transform: rotate(-42deg) translate(3.2px, -1px);
+}
+*/
+
+.sidebar {
+  font-family: "Fredericka the Great", cursive;
+  background-color: #1c221f;
+  position: absolute;
+  top: 0;
+  left: -30vw;
+  height: 100vh;
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  padding: 20rem 0;
+  transition: background 300ms, left 500ms;
+  z-index: 1000;
+}
+
+.dark .sidebar {
+  background: #333;
+}
+
+.dark .sidebar a,
+.dark .sidebar div,
+.dark .sidebar p {
+  color: #fff;
+}
+
+.change .sidebar {
+  left: 0;
+}
+
+.change #content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 500;
+}
+
+.sidebar div {
+  display: flex;
+}
+
+.sidebar div a {
+  margin: 0 1rem;
+}
+
+.sidebar a,
+.sidebar div,
+.sidebar p {
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 2rem auto;
+}
+
+.select-btn {
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: auto 0;
+  width: 30rem;
+  height: 5rem;
+  border: 0;
+  box-shadow: 0.05rem 0.05rem 1rem rgba(17, 17, 17, 0.5);
+  border-radius: 30px;
+  display: flex;
+}
+
+.btn-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #509e70;
+  width: 15rem;
+  height: 100%;
+  border-radius: 30px;
+  transition: background 300ms, left 500ms;
+}
+
+.dark .btn-indicator {
+  background: #fff !important;
+}
+
+.dark #calculator-btn {
+  color: #1cd66a !important;
+}
+
+.dark #converter-btn {
+  color: #fa6914 !important;
+}
+
+.toggle-btn {
+  color: #ccc;
+  letter-spacing: 0.8px;
+  text-shadow: 0 1px 1px rgba(17, 17, 17, 0.281);
+  cursor: pointer;
+  width: 50%;
+  border: 0;
+  outline: none;
+  background: transparent;
+  z-index: 2;
+  transition: all 500ms;
+}
+
+.toggle-btn:focus {
+  color: #eee;
+  text-shadow: 0 0.5px 0.5px rgba(17, 17, 17, 0.281);
+}
+
+/** DARK MODE TOGGLE **/
+
+.night-light-icons {
+  margin: auto 0 auto 0;
+  position: absolute;
+  top: 4.5rem;
+  right: 13rem;
+}
+
+.night-light-icons span i {
+  text-align: center;
+  position: absolute;
+  font-size: 2.3rem;
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  color: #777;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#light {
+  display: none;
+}
+
+.dark #light {
+  display: block;
+}
+
+.dark #light i {
+  color: #fff;
+}
+
+#dark {
+  display: block;
+}
+
+.dark #dark {
+  display: none;
+}
+/***X** DARK MODE TOGGLE ****X***/
+
+.calc-body {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  font-size: 4.5rem;
+  text-transform: capitalize;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.calc {
+  position: absolute;
+  top: 5rem;
+  width: 80%;
+  margin: auto;
+  height: 100%;
+  transition: left 500ms;
+}
+
+.input-grp {
+  margin: 0 auto 4rem auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.dark .input-grp,
+.dark .field {
+  background: #1c221f;
+}
+
+.field {
+  font-family: "Quantico", sans-serif;
+  color: #666;
+  outline: none;
+  border: none;
+  text-align: right;
+  font-size: 3rem;
+  padding: 2rem 0 0.5rem 0;
+  transition: background 300ms;
+}
+
+#input-display {
+  word-wrap: break-word;
+  word-break: break-all;
+  color: #888;
+  font-size: 6rem;
+  max-height: 7rem;
+}
+
+/* CONVERTER **********/
+
+.conv {
+  position: absolute;
+  top: 30%;
+  left: 200vw;
+  transition: left 500ms;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 80%;
+}
+
+.conv h1 {
+  display: block;
+  width: 100%;
+  font-family: "Dancing Script", cursive;
+  font-size: 8rem;
+  color: #777777;
+  text-align: center;
+}
+
+/*** BUTTONS **/
+
+.buttons {
+  width: 100%;
+  height: 50rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 1rem;
+}
+
+.buttons .ac {
+  font-weight: 550;
+  font-size: 2.7rem;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  outline: none;
+  margin: 0 auto;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #646161;
+  font-size: 2.5rem;
+  box-shadow: 0.5px 0.5px 1px 0.5px rgba(17, 17, 17, 0.1),
+    -0.5px -0.5px 1px 0.5px rgba(17, 17, 17, 0.1);
+}
+
+.dark .button {
+  box-shadow: 0.5px 0.5px 2px 0.5px rgba(17, 17, 17, 0.4),
+    -0.5px -0.5px 2px 0.5px rgba(17, 17, 17, 0.4);
+}
+
+.null {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.inDark {
+  transition: background 300ms;
+}
+
+.dark .inDark {
+  background: #333;
+  border-radius: 50%;
+}
+
+.operator,
+#equals {
+  background-color: #fff;
+  color: #1cd66a;
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+@media (max-width: 750px) {
+  body {
+    background: #fff;
+    overflow: hidden;
+  }
+  .container {
+    overflow: hidden;
+    width: 100%;
+  }
+  .sidebar {
+    left: -50vw;
+  }
+}
+
+@media (max-width: 750px) {
+  .sidebar {
+    left: -100vw;
+  }
+  .burger {
+    top: 4rem;
+    left: 3rem;
+    transition: all 400ms;
+  }
+  .night-light-icons {
+    top: 4.5rem;
+    right: 5.5rem;
+  }
+  .calc {
+    top: 3rem;
+  }
+}
