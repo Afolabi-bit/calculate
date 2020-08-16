@@ -547,19 +547,13 @@ p {
     overflow: hidden;
     width: 100%;
   }
-  .sidebar {
-    left: -50vw;
-  }
-}
 
-@media (max-width: 750px) {
   .sidebar {
     left: -100vw;
   }
   .burger {
     top: 4rem;
     left: 3rem;
-    transition: all 400ms;
   }
   .night-light-icons {
     top: 4.5rem;
