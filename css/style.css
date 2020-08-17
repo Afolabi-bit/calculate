@@ -584,4 +584,16 @@ p {
   #input-display {
     font-size: 4rem;
   }
+
+  .buttons {
+    width: 90%;
+    margin: 0 auto;
+    height: 40rem;
+  }
+
+  .button {
+    margin: 0 auto;
+    width: 5rem;
+    height: 5rem;
+  }
 }
