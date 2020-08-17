@@ -53,7 +53,7 @@ var calcContent = document.querySelector("#content");
 window.onload = () => {
   setTimeout(() => {
     body.classList.add("display");
-  }, 4000);
+  }, 40);
 };
 
 // toggle dark mode
@@ -67,15 +67,13 @@ light.addEventListener("click", () => {
 });
 
 converter.addEventListener("click", () => {
-  btn.style.left = "15rem";
-  btn.style.backgroundColor = "#fa6914";
+  body.classList.add("toggleConverter");
   converterPage.style.left = "5rem";
   calculatorPage.style.left = "-200vw";
 });
 
 calculator.addEventListener("click", () => {
-  btn.style.left = "0";
-  btn.style.backgroundColor = "#1eac59";
+  body.classList.remove("toggleConverter");
   converterPage.style.left = "200vw";
   calculatorPage.style.left = "5rem";
 });

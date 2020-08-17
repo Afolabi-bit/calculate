@@ -178,14 +178,14 @@ p {
 /* Xx*********** spinner ***8***/
 
 .container {
-  overflow-x: hidden;
+  overflow: hidden;
   margin: 0 auto;
   position: relative;
   background: rgba(255, 255, 255, 0.95);
   display: none;
   height: 100vh;
-  width: 720px;
-  transition: background 300ms;
+  width: 425px;
+  border-radius: 3rem;
 }
 
 .display .container {
@@ -194,12 +194,21 @@ p {
 
 #content {
   position: relative;
+  transition: all 500ms;
+}
+
+#content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  background: transparent;
   transition: all 300ms;
 }
 
-.dark .container {
-  background: #1c221f;
-}
+/*****X** CALC_TOP ****X*****/
 
 .calc-top {
   position: relative;
@@ -209,14 +218,13 @@ p {
 
 .burger {
   position: absolute;
-  top: 3rem;
+  top: 4rem;
   left: 5rem;
   margin: 0 3rem 3rem 0;
   width: 2.5rem;
   height: 3.5rem;
   cursor: pointer;
   z-index: 50;
-  transition: left 600ms;
 }
 
 .line {
@@ -224,7 +232,6 @@ p {
   width: 100%;
   height: 2px;
   background-color: #888;
-  transition: all 0.3s;
 }
 
 .line2 {
@@ -247,63 +254,6 @@ p {
   transform: rotate(-42deg) translate(3.2px, -1px);
 }
 */
-
-.sidebar {
-  font-family: "Fredericka the Great", cursive;
-  background-color: #1c221f;
-  position: absolute;
-  top: 0;
-  left: -30vw;
-  height: 100vh;
-  width: 30rem;
-  display: flex;
-  flex-direction: column;
-  padding: 20rem 0;
-  transition: background 300ms, left 500ms;
-  z-index: 1000;
-}
-
-.dark .sidebar {
-  background: #333;
-}
-
-.dark .sidebar a,
-.dark .sidebar div,
-.dark .sidebar p {
-  color: #fff;
-}
-
-.change .sidebar {
-  left: 0;
-}
-
-.change #content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  height: 100%;
-  left: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 500;
-}
-
-.sidebar div {
-  display: flex;
-}
-
-.sidebar div a {
-  margin: 0 1rem;
-}
-
-.sidebar a,
-.sidebar div,
-.sidebar p {
-  letter-spacing: 1px;
-  font-size: 1.5rem;
-  color: #fff;
-  margin: 2rem auto;
-}
 
 .select-btn {
   position: absolute;
@@ -330,6 +280,11 @@ p {
   transition: background 300ms, left 500ms;
 }
 
+.toggleConverter .btn-indicator {
+  left: 15rem;
+  background-color: #fa6914;
+}
+
 .dark .btn-indicator {
   background: #fff !important;
 }
@@ -343,6 +298,7 @@ p {
 }
 
 .toggle-btn {
+  text-align: center;
   color: #ccc;
   letter-spacing: 0.8px;
   text-shadow: 0 1px 1px rgba(17, 17, 17, 0.281);
@@ -360,13 +316,18 @@ p {
   text-shadow: 0 0.5px 0.5px rgba(17, 17, 17, 0.281);
 }
 
+/****** X ** END OF CALC-TOP *****X*****/
+
 /** DARK MODE TOGGLE **/
+.dark .container {
+  background: #1c221f;
+}
 
 .night-light-icons {
   margin: auto 0 auto 0;
   position: absolute;
   top: 4.5rem;
-  right: 13rem;
+  right: 7rem;
 }
 
 .night-light-icons span i {
@@ -400,7 +361,54 @@ p {
 .dark #dark {
   display: none;
 }
+
+.dark .inDark {
+  background: #333;
+  border-radius: 50%;
+}
+
+.dark .button {
+  box-shadow: 0.5px 0.5px 2px 0.5px rgba(17, 17, 17, 0.4),
+    -0.5px -0.5px 2px 0.5px rgba(17, 17, 17, 0.4);
+}
 /***X** DARK MODE TOGGLE ****X***/
+
+/****sidebar ******/
+.sidebar {
+  padding-top: 26rem;
+  position: absolute;
+  top: 0;
+  left: -100vw;
+  width: 55%;
+  height: 100vh;
+  background-color: #363636;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+  transition: left 500ms ease-in-out;
+}
+
+.sidebar a,
+.sidebar div i,
+.sidebar p {
+  letter-spacing: 1px;
+  margin: 1.5rem 0;
+  color: #fff;
+  font-size: 2rem;
+  font-family: "Fredericka the Great", cursive;
+}
+
+.change .sidebar {
+  left: 0;
+}
+
+.change #content::before {
+  background: rgba(17, 17, 17, 0.2);
+  z-index: 10;
+}
+
+/* CALC_BODY */
 
 .calc-body {
   position: relative;
@@ -428,17 +436,15 @@ p {
   width: 100%;
   display: flex;
   flex-direction: column;
+  background: transparent;
   pointer-events: none;
-}
-
-.dark .input-grp,
-.dark .field {
-  background: #1c221f;
+  transition: background 300ms;
 }
 
 .field {
   font-family: "Quantico", sans-serif;
   color: #666;
+  background: transparent;
   outline: none;
   border: none;
   text-align: right;
@@ -511,11 +517,6 @@ p {
     -0.5px -0.5px 1px 0.5px rgba(17, 17, 17, 0.1);
 }
 
-.dark .button {
-  box-shadow: 0.5px 0.5px 2px 0.5px rgba(17, 17, 17, 0.4),
-    -0.5px -0.5px 2px 0.5px rgba(17, 17, 17, 0.4);
-}
-
 .null {
   opacity: 0;
   visibility: hidden;
@@ -523,11 +524,6 @@ p {
 
 .inDark {
   transition: background 300ms;
-}
-
-.dark .inDark {
-  background: #333;
-  border-radius: 50%;
 }
 
 .operator,
@@ -538,28 +534,54 @@ p {
   font-weight: 500;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 425px) {
   body {
     background: #fff;
     overflow: hidden;
   }
-  .container {
-    overflow: hidden;
-    width: 100%;
-  }
-
   .sidebar {
     left: -100vw;
   }
+}
+
+@media (max-width: 425px) {
+  html {
+    font-size: 55%;
+  }
+  .container {
+    overflow: hidden;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+  }
+
+  .select-btn {
+    left: 47%;
+    margin: auto 1rem;
+    width: 60%;
+    padding: 1rem 2rem;
+  }
+
+  .btn-indicator {
+    width: 50%;
+  }
+
+  .toggleConverter .btn-indicator {
+    left: 50%;
+  }
+
   .burger {
     top: 4rem;
     left: 3rem;
   }
   .night-light-icons {
     top: 4.5rem;
-    right: 5.5rem;
+    right: 7rem;
   }
   .calc {
     top: 3rem;
+  }
+  #input-display {
+    font-size: 4rem;
   }
 }
