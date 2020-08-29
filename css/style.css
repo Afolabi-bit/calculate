@@ -175,6 +175,11 @@ p {
   letter-spacing: 1.1px;
 }
 
+.spinner-text h4 i {
+  color: rgba(240, 187, 13, 0.863);
+  margin-left: 1rem;
+}
+
 /* Xx*********** spinner ***8***/
 
 .container {
@@ -375,11 +380,11 @@ p {
 
 /****sidebar ******/
 .sidebar {
-  padding-top: 26rem;
+  padding-top: 20rem;
   position: absolute;
   top: 0;
   left: -100vw;
-  width: 55%;
+  width: 65%;
   height: 100vh;
   background-color: #363636;
   display: flex;
@@ -390,13 +395,53 @@ p {
 }
 
 .sidebar a,
-.sidebar div i,
 .sidebar p {
   letter-spacing: 1px;
   margin: 1.5rem 0;
   color: #fff;
   font-size: 2rem;
   font-family: "Fredericka the Great", cursive;
+}
+
+.sidebar .social {
+  width: 50%;
+  margin: 1.5rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar .social p {
+  width: 5rem;
+  height: 5rem;
+  padding: 1rem;
+  margin: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar .social p:nth-child(1) {
+  background: blue;
+}
+.sidebar .social p:nth-child(3) {
+  background: #fff;
+}
+
+.sidebar .social p img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sidebar .social p:nth-child(1) img {
+  height: 3rem;
+  object-fit: contain;
+}
+.sidebar .social p:nth-child(3) img {
+  height: 4rem;
+  object-fit: contain;
 }
 
 .change .sidebar {
@@ -459,28 +504,6 @@ p {
   color: #888;
   font-size: 6rem;
   max-height: 7rem;
-}
-
-/* CONVERTER **********/
-
-.conv {
-  position: absolute;
-  top: 30%;
-  left: 200vw;
-  transition: left 500ms;
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  width: 80%;
-}
-
-.conv h1 {
-  display: block;
-  width: 100%;
-  font-family: "Dancing Script", cursive;
-  font-size: 8rem;
-  color: #777777;
-  text-align: center;
 }
 
 /*** BUTTONS **/

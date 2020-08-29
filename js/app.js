@@ -53,7 +53,7 @@ var calcContent = document.querySelector("#content");
 window.onload = () => {
   setTimeout(() => {
     body.classList.add("display");
-  }, 40);
+  }, 4000);
 };
 
 // toggle dark mode

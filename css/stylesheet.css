@@ -1,0 +1,121 @@
+:root {
+  --primary: radial-gradient(
+    rgb(219, 18, 45),
+    rgb(199, 17, 216),
+    rgb(233, 149, 23)
+  );
+}
+.flex-row {
+  display: flex;
+}
+
+.calc-body .conv .inputs-wrapper,
+.conv {
+  flex-direction: column;
+}
+
+.conv {
+  position: absolute;
+  top: 10%;
+  left: 200vw;
+  transition: left 500ms;
+
+  height: 100%;
+  width: 80%;
+}
+
+.calc-body .conv .inputs-wrapper .screen {
+  display: grid;
+  grid-template-columns: 90% 10%;
+  width: 100%;
+  padding: 2rem;
+  background: rgba(204, 204, 204, 0.507);
+  margin: 0 0 2rem 0;
+  border-radius: 7px;
+  height: 13rem;
+}
+
+.calc-body .conv .inputs-wrapper .screen input#convOutput {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  font-family: "Quantico", sans-serif;
+  font-size: 40px;
+  color: #666;
+  text-align: right;
+  background: transparent;
+  outline: none;
+  padding-right: 0;
+}
+
+.calc-body .conv .inputs-wrapper .screen div {
+  width: 10%;
+  height: 100%;
+  position: relative;
+  background: transparent;
+}
+
+.calc-body .conv .inputs-wrapper .screen div p {
+  position: absolute;
+  top: 4px;
+  left: -10px;
+  font-size: 40px;
+  font-family: "Quantico", sans-serif;
+  background: transparent;
+  text-align: left;
+  color: #666;
+  display: none;
+}
+
+.calc-body .conv .inputs-wrapper .screen div p:nth-child(2) {
+}
+
+.calc-body .conv .inputs-wrapper input#convInput {
+  margin: 2rem 0;
+  background: rgba(204, 204, 204, 0.507);
+  display: block;
+  padding: 3rem 1rem;
+  height: 2rem;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #333;
+  border-radius: 7px;
+  text-align: right;
+  font-size: 20px;
+  border: 2px solid rgba(204, 204, 204, 0.174);
+  font-family: "Quantico", sans-serif;
+}
+
+.calc-body .conv .inputs-wrapper input#convInput:focus {
+  border: 2px solid rgba(204, 204, 204, 0.774);
+}
+
+.calc-body .conv .buttons-wrapper {
+  padding: 3rem 0;
+  justify-content: space-evenly;
+}
+
+.calc-body .conv .buttons-wrapper button {
+  cursor: pointer;
+  padding: 1.5rem 2.5rem;
+  outline: none;
+  border: 2px solid rgba(155, 70, 70, 0.3);
+  background: transparent;
+  border-radius: 30px;
+  color: #fa6914;
+  font-weight: 600;
+}
+
+#reset {
+  cursor: pointer;
+  padding: 1.5rem;
+  margin: 0.5rem auto;
+  width: 50%;
+  outline: none;
+  border: none;
+  color: #fff;
+  background: #fa6914;
+  border-radius: 30px;
+}

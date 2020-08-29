@@ -27,6 +27,7 @@
     <!-- css file-->
 
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/stylesheet.css" />
   </head>
   <body>
     <div id="spinner" class="spinner">
@@ -40,7 +41,7 @@
         <div></div>
       </div>
       <div class="spinner-text">
-        <h4>Just a moment...</h4>
+        <h4>Just a moment  <i class="fas fa-smile-beam"></i> </moment></h4>
       </div>
     </div>
     <div class="container">
@@ -110,8 +111,22 @@
               </button>
             </div>
           </section>
-          <section class="conv" id="converter">
-            <h1>Coming Soon...</h1>
+          <section class="conv flex-row" id="converter">
+            <div class="inputs-wrapper flex-row">
+              <div class="screen">
+                <input type="number" readonly id="convOutput" />
+                <div>
+                  <p id="degFahrenheit">&deg;F</p>
+                  <p id="degCelsius">&deg;C</p>
+                </div>
+              </div>
+              <input id="convInput" type="number" placeholder="Input" />
+            </div>
+            <div class="buttons-wrapper flex-row">
+              <button id="fahrenheit-btn">To Fahrenheit</button>
+              <button id="celsius-btn">To Celsius</button>
+            </div>
+            <button id="reset">Reset</button>
           </section>
         </div>
       </div>
@@ -120,15 +135,20 @@
         <a href="#">Leave a review</a>
         <a href="#">Suggestions</a>
         <div class="social">
-          <i class="fa fa-github"></i>
-
-          <i class="fa fa-twitter"></i>
-
-          <i class="fa fa-facebook-f"></i>
+          <p>
+            <img src="./assets/fb3.png" alt="" />
+          </p>
+          <p>
+            <img src="./assets/twitter3.png" alt="" />
+          </p>
+          <p>
+            <img src="./assets/insta.png" alt="" />
+          </p>
         </div>
-        <p>Phone: 0902 079 9716</p>
+        <p><i class="fas fa-phone-alt"></i> 0902 079 9716</p>
       </section>
     </div>
     <script src="./js/app.js"></script>
+    <script src="./js/function.js"></script>
   </body>
 </html>
