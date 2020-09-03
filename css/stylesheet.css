@@ -123,7 +123,7 @@
 @media (max-width: 425px) {
   .calc-body .conv .inputs-wrapper .screen div p {
     position: absolute;
-    top: 20px;
+    top: 10px;
     transform: translateY(10px);
     left: -1px;
     font-size: 40px;
