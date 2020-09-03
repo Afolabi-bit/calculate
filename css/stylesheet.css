@@ -119,3 +119,18 @@
   background: #fa6914;
   border-radius: 30px;
 }
+
+@media (max-width: 425px) {
+  .calc-body .conv .inputs-wrapper .screen div p {
+    position: absolute;
+    top: 20px;
+    transform: translateY(10px);
+    left: -1px;
+    font-size: 40px;
+    font-family: "Quantico", sans-serif;
+    background: transparent;
+    text-align: left;
+    color: #666;
+    display: none;
+  }
+}
