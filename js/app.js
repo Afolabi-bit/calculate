@@ -20,7 +20,7 @@ backspace.addEventListener("click", () => {
 //EQUALS COMPUTATION
 equals.addEventListener("click", () => {
   let value = input.value;
-  update = eval(value);
+  let update = eval(value);
   input.value = "";
   output.value = update;
   //styling

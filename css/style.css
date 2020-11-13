@@ -16,7 +16,7 @@ html {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: url(../assets/sky-at-sunset.jpg);
+  background: url(../assets/5094.png);
   background-size: cover;
 }
 
@@ -51,19 +51,28 @@ p {
   height: 8rem;
   animation-name: animateCircles;
   animation-duration: 4s;
+  animation-fill-mode: backwards;
 }
 
 @keyframes animateCircles {
   0% {
     opacity: 0;
-    visibility: hidden;
+    visibility: visible;
   }
   25% {
     opacity: 1;
     visibility: visible;
   }
+  85% {
+    opacity: 0.7;
+    visibility: visible;
+  }
   90% {
-    opacity: 1;
+    opacity: 0.6;
+    visibility: visible;
+  }
+  95% {
+    opacity: 0.3;
     visibility: visible;
   }
   100% {
@@ -376,6 +385,11 @@ p {
   box-shadow: 0.5px 0.5px 2px 0.5px rgba(17, 17, 17, 0.4),
     -0.5px -0.5px 2px 0.5px rgba(17, 17, 17, 0.4);
 }
+
+.dark .calc-body .conv .inputs-wrapper .screen input#convOutput,
+.dark .calc-body .conv .inputs-wrapper input#convInput {
+  color: #ccc;
+}
 /***X** DARK MODE TOGGLE ****X***/
 
 /****sidebar ******/
@@ -394,20 +408,32 @@ p {
   transition: left 500ms ease-in-out;
 }
 
-.sidebar a,
 .sidebar p {
   letter-spacing: 1px;
   margin: 1.5rem 0;
   color: #fff;
   font-size: 2rem;
-  font-family: "Fredericka the Great", cursive;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .sidebar .social {
-  width: 50%;
+  width: 70%;
   margin: 1.5rem auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.social a {
+  color: white;
+}
+
+.social i {
+  transition: color 0.3s;
+  font-size: 27px;
+}
+
+.social a:hover i {
+  color: #fa6914;
 }
 
 .sidebar .social p {

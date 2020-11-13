@@ -79,7 +79,7 @@
               <button id="backspace" class="button inDark">
                 <i class="fa fa-backspace"></i>
               </button>
-              <button value="^" class="button number operator">
+              <button value="" class="button number operator">
                 <i class="fa fa-percent"></i>
               </button>
               <button value="/" class="button number operator">
@@ -113,11 +113,15 @@
           </section>
           <section class="conv flex-row" id="converter">
             <div class="inputs-wrapper flex-row">
-              <div class="screen">
+              <div id="screen" class="screen">
                 <input type="number" readonly id="convOutput" />
                 <div>
-                  <p id="degFahrenheit">&deg;F</p>
-                  <p id="degCelsius">&deg;C</p>
+                  <p id="degf">
+                    &deg;F
+                  </p>
+                  <p id="degc">
+                    &deg;C
+                  </p>
                 </div>
               </div>
               <input id="convInput" type="number" placeholder="Input" />
@@ -131,24 +135,18 @@
         </div>
       </div>
       <section id="sidebar" class="sidebar">
-        <a href="#">Contact developer</a>
-        <a href="#">Leave a review</a>
-        <a href="#">Suggestions</a>
+        <p>Contact developer</a>
+        <p>Leave a review</p>
+        <p>Suggestions</p>
         <div class="social">
-          <p>
-            <img src="./assets/fb3.png" alt="" />
-          </p>
-          <p>
-            <img src="./assets/twitter3.png" alt="" />
-          </p>
-          <p>
-            <img src="./assets/insta.png" alt="" />
-          </p>
+          <a href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
+          <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+          <a href="https://github.com/josephafolabi"><i class="fab fa-github fa-2x"></i></a>
         </div>
         <p><i class="fas fa-phone-alt"></i> 0902 079 9716</p>
       </section>
     </div>
-    <script src="./js/app.js"></script>
     <script src="./js/function.js"></script>
+    <script src="./js/app.js"></script>
   </body>
 </html>

@@ -25,18 +25,17 @@
 }
 
 .calc-body .conv .inputs-wrapper .screen {
-  display: grid;
-  grid-template-columns: 90% 10%;
   width: 100%;
-  padding: 2rem;
+  padding: 10px;
   background: rgba(204, 204, 204, 0.507);
   margin: 0 0 2rem 0;
   border-radius: 7px;
   height: 13rem;
+  display: flex;
 }
 
 .calc-body .conv .inputs-wrapper .screen input#convOutput {
-  width: 100%;
+  width: 85%;
   height: 100%;
   outline: none;
   border: none;
@@ -46,26 +45,25 @@
   text-align: right;
   background: transparent;
   outline: none;
-  padding-right: 0;
+  justify-self: flex-start;
 }
 
-.calc-body .conv .inputs-wrapper .screen div {
-  width: 10%;
-  height: 100%;
+.inputs-wrapper .screen div {
   position: relative;
-  background: transparent;
+  width: 15%;
 }
 
 .calc-body .conv .inputs-wrapper .screen div p {
-  position: absolute;
-  top: 4px;
-  left: -10px;
   font-size: 40px;
   font-family: "Quantico", sans-serif;
   background: transparent;
   text-align: left;
   color: #666;
-  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
 }
 
 .calc-body .conv .inputs-wrapper .screen div p:nth-child(2) {
